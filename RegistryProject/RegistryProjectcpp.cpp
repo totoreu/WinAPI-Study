@@ -1,4 +1,8 @@
 #include <Windows.h>
+#include <iostream>
+#include <string>
+#include "Reg.h"
+#include "Utility.h"
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 HINSTANCE g_hInst;
@@ -51,48 +55,38 @@ int APIENTRY WinMain(HINSTANCE hInstance,
     return (int)Message.wParam;
 }
 
+const LPCTSTR const KEY = TEXT("Software\\HS\\RegTest\\");
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
     RECT rt;
-    HKEY key;
-    DWORD dwDisp;
-    DWORD Size;
+    static HWND hEdit;
+    TCHAR str[256] = { 0 };
 
     switch (iMessage)
     {
     case WM_CREATE:
         hWndMain = hWnd;
-        RegCreateKeyEx(HKEY_CURRENT_USER,
-            TEXT("Software\\MiyoungSoft\\RegiTest\\Position"), 0, NULL,
-            REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &key, &dwDisp);
-        Size = sizeof(LONG);
-        LONG RegValue;
-        RegValue = RegQueryValueEx(key, TEXT("Left"), 0, NULL, (LPBYTE)&rt.left, &Size);
-        if (RegValue != ERROR_SUCCESS)
-            rt.left = 0;
-        RegValue = RegQueryValueEx(key, TEXT("Top"), 0, NULL, (LPBYTE)&rt.top, &Size);
-        if (RegValue != ERROR_SUCCESS)
-            rt.top = 0;
-        RegValue = RegQueryValueEx(key, TEXT("Right"), 0, NULL, (LPBYTE)&rt.right, &Size);
-        if (RegValue != ERROR_SUCCESS)
-            rt.right = 100;
-        RegValue = RegQueryValueEx(key, TEXT("Bottom"), 0, NULL, (LPBYTE)&rt.bottom, &Size);
-        if (RegValue != ERROR_SUCCESS)
-            rt.bottom = 100;
-        RegCloseKey(key);
+        rt.left = RegReadInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("Left"), 0);
+        rt.top = RegReadInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("top"), 0);
+        rt.right = RegReadInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("right"), 300);
+        rt.bottom = RegReadInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("bottom"), 200);
         MoveWindow(hWnd, rt.left, rt.top, rt.right - rt.left, rt.bottom - rt.top, TRUE);
+        hEdit = CreateWindow(TEXT("Edit"), NULL, WS_CHILD | WS_VISIBLE | WS_BORDER | ES_AUTOHSCROLL, 
+            10, 10, 200, 25, hWnd, (HMENU)100, g_hInst, NULL);
+        RegReadString(SHCU, FullKeyPath(KEY, TEXT("Edit")), TEXT("Str"), TEXT("¹®ÀÚ¿­"), str, 256);
+        SetWindowText(hEdit, str);
         return 0;
     case WM_DESTROY:
-        RegCreateKeyEx(HKEY_CURRENT_USER,
-            TEXT("Software\\MiyoungSoft\\RegiTest\\Position"), 0, NULL,
-            REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &key, &dwDisp);
         GetWindowRect(hWnd, &rt);
-        Size = sizeof(LONG);
-        RegSetValueEx(key, TEXT("Left"), 0, REG_DWORD, (LPBYTE)&rt.left, Size);
-        RegSetValueEx(key, TEXT("Top"), 0, REG_DWORD, (LPBYTE)&rt.top, Size);
-        RegSetValueEx(key, TEXT("Right"), 0, REG_DWORD, (LPBYTE)&rt.right, Size);
-        RegSetValueEx(key, TEXT("Bottom"), 0, REG_DWORD, (LPBYTE)&rt.bottom, Size);
-        RegCloseKey(key);
+        auto check = RegWriteInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("Left"), rt.left);
+        if (!check)
+            MessageBox(hWnd, 0, 0, );
+        RegWriteInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("Top"), rt.top);
+        RegWriteInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("Right"), rt.right);
+        RegWriteInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("Bottom"), rt.bottom);
+        GetWindowText(hEdit, str, 256);
+        RegWriteString(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("Str"), str);
         PostQuitMessage(0);
         return 0;
     }

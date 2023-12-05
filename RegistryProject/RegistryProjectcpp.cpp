@@ -55,7 +55,7 @@ int APIENTRY WinMain(HINSTANCE hInstance,
     return (int)Message.wParam;
 }
 
-const LPCTSTR const KEY = TEXT("Software\\HS\\RegTest\\");
+constexpr const LPCTSTR KEY = TEXT("Software\\HS\\RegTest\\");
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
@@ -81,7 +81,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
         GetWindowRect(hWnd, &rt);
         auto check = RegWriteInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("Left"), rt.left);
         if (!check)
-            MessageBox(hWnd, 0, 0, );
+            MessageBox(hWnd, 0, 0, MB_OK);
         RegWriteInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("Top"), rt.top);
         RegWriteInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("Right"), rt.right);
         RegWriteInt(SHCU, FullKeyPath(KEY, TEXT("Position")), TEXT("Bottom"), rt.bottom);

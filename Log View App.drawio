@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-07T04:44:12.093Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Whale/3.23.214.17 Safari/537.36" etag="yOrpZoDft5hLqO7Zk6Bx" version="22.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-07T06:36:42.042Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Whale/3.23.214.17 Safari/537.36" etag="Pe-imlnfZen6ddnavidI" version="22.1.5" type="github">
   <diagram name="페이지-1" id="O8hurq3yJIF87QjJQ0jU">
     <mxGraphModel dx="730" dy="2086" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -16,14 +16,20 @@
         <mxCell id="MgHBrbm2BHN63MwUzCdo-5" value="&lt;h1&gt;프로그램내 여러 윈도우&lt;/h1&gt;&lt;p&gt;하나의 로그 파일뿐만 아니라, 여러 로그 파일을 탭으로 관리할 수 있도록 프로그램내 여러 윈도우 창을 지원해야한다.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="20" y="-730" width="290" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="MgHBrbm2BHN63MwUzCdo-7" value="&lt;h1&gt;여러 문자열 타입의 인코딩&lt;/h1&gt;&lt;p&gt;ANSI, UTF8, UTF8-BOM, UTF16-LE, UTF16-BE에 따라볼 수 있도록, 인코딩 기능이 들어가야 한다.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-7" value="&lt;h1&gt;포맷에 따른 파싱&lt;/h1&gt;&lt;p&gt;ANSI, UTF8, UTF8-BOM, UTF16-LE, UTF16-BE에 따라 동일하게 읽어올 수 있도록, 파싱 작업이 필요하다.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="320" y="-730" width="300" height="120" as="geometry" />
         </mxCell>
         <mxCell id="MgHBrbm2BHN63MwUzCdo-8" value="&lt;h1&gt;Log 타입별 색상&lt;/h1&gt;&lt;p&gt;단순 메시지인지 경고, 에러 등 로그 라인에 대한 색상을 지원해야 한다.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="20" y="-620" width="290" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="MgHBrbm2BHN63MwUzCdo-9" value="&lt;h1&gt;Log 타입별 색상&lt;/h1&gt;&lt;p&gt;단순 메시지인지 경고, 에러 등 로그 라인에 대한 색상을 지원해야 한다.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-9" value="&lt;h1&gt;검색 및 필터링 기능&lt;/h1&gt;&lt;p&gt;검색이 가능하며, Error Level에 따른 필터링이 가능해야 한다.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="320" y="-620" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-10" value="&lt;h1&gt;예외처리&lt;/h1&gt;&lt;p&gt;경로에 존재한 파일인지 아닌지, 아니면 다른 확장자인지에 따른 예외 처리가 필요하다.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="15" y="-520" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-11" value="&lt;h1&gt;타임라인에 따른 표시&lt;/h1&gt;&lt;div&gt;로그를 무작위가 아닌 타임라인순으로 표시해야한다.&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="-520" width="300" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

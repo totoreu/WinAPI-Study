@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-12-07T06:36:42.042Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Whale/3.23.214.17 Safari/537.36" etag="Pe-imlnfZen6ddnavidI" version="22.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-11T05:09:54.778Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Whale/3.23.214.17 Safari/537.36" etag="7C4GR4fE053pxPk10KWV" version="22.1.5" type="github">
   <diagram name="페이지-1" id="O8hurq3yJIF87QjJQ0jU">
-    <mxGraphModel dx="730" dy="2086" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1305" dy="2092" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -30,6 +30,45 @@
         </mxCell>
         <mxCell id="MgHBrbm2BHN63MwUzCdo-11" value="&lt;h1&gt;타임라인에 따른 표시&lt;/h1&gt;&lt;div&gt;로그를 무작위가 아닌 타임라인순으로 표시해야한다.&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="320" y="-520" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="MgHBrbm2BHN63MwUzCdo-12" target="MgHBrbm2BHN63MwUzCdo-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-12" value="파일 열기" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="990" y="-1090" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="MgHBrbm2BHN63MwUzCdo-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1250" y="-950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MgHBrbm2BHN63MwUzCdo-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1050" y="-870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-13" value="파일을 열렸는가?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="-990" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="MgHBrbm2BHN63MwUzCdo-19" target="MgHBrbm2BHN63MwUzCdo-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1310" y="-990" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1310" y="-1060" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-19" value="메시지박스&lt;br&gt;Error 사유 반환" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="-980" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-25" value="파일 열기 완료" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="990" y="-870" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-26" value="검색 |" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="440" y="-1070" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="MgHBrbm2BHN63MwUzCdo-27" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;필터▼" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="370" y="-1070" width="70" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
